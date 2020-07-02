@@ -1,0 +1,27 @@
+﻿@using Heroes.ViewModels;
+
+@model Heroes.Models.Player
+@{
+    Layout = "_Layout";
+}
+
+
+
+
+<h1>Футбольная элита 1748</h1>
+<div class ="row mt-5 mb-2">
+
+    @{
+        foreach (var player in Model.AllPlayers)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@player.img" alt="@player.name" />
+                <h2> Игрок: @player.name </h2>
+                <p> Цена: @player.price.ToString()</p>
+                <p>@player.ShortDesc</p>
+                <p><a class="btn btn-warning" href="#">Подробнее:</a></p>
+            </div>
+
+        }
+    }
+</div>
